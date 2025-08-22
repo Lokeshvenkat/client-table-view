@@ -1,69 +1,64 @@
-# React + TypeScript + Vite
+Client Table Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based interactive dashboard for managing client data efficiently. The app provides sorting, searching, filtering, and client management features with a clean, responsive UI.
 
-Currently, two official plugins are available:
+Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Dynamic Sorting: Sort clients by multiple fields with visual indicators showing the number of active sort options.
 
-## Expanding the ESLint configuration
+Inline Search: Clickable search icon transforms into a search bar for quick lookups.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Type Filtering: Filter clients by type (All, Individual, Company) with selected option highlighted.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Client Status Indicators: Color-coded badges for active/inactive clients.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+Add Client: Easily add new clients through a simple action button.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Responsive & Interactive UI: Smooth animations, hover effects, and badges for better usability.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Technologies Used
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+React for frontend development
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+TypeScript for type safety
+
+Tailwind CSS for styling
+
+Lucide Icons for consistent iconography
+
+Installation
+
+Clone the repository:
+
+git clone https://github.com/your-username/client-table.git
+cd client-table
+
+
+Install dependencies:
+
+npm install
+
+
+Start the development server:
+
+npm start
+
+
+Open http://localhost:3000
+ in your browser.
+
+Usage
+
+Use the search icon to quickly find clients by name or email.
+
+Click sort to apply sorting rules; the badge shows how many sorts are active.
+
+Use type filters to view all, individual, or company clients.
+
+Click Add Client to simulate adding a new client.
+
+![alt text](image-2.png)
+
+License
+
+This project is licensed under the MIT License.
