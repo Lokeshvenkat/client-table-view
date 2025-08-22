@@ -5,7 +5,7 @@ import { MOCK_CLIENTS } from "./components/mock";
 function App() {
   return (
     <div className="p-6">
-      <h1 className="text-xl font-semibold mb-4 text-center">Client Table</h1>
+      <h1 className="text-xl font-semibold mb-4 text-left">Clients</h1>
       <ClientTable clients={MOCK_CLIENTS} />
     </div>
   );

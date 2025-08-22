@@ -2,7 +2,7 @@ import { DndContext } from "@dnd-kit/core";
 import type{ DragEndEvent } from "@dnd-kit/core";
 import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable";
 import { AnimatePresence } from "framer-motion";
-import { X, ChevronsUp } from "lucide-react";
+import { X, ListFilterPlus } from "lucide-react";
 import { useSensor, useSensors, PointerSensor } from "@dnd-kit/core";
 import { arrayMove } from "@dnd-kit/sortable";
 import { Button } from "./ui/button";
@@ -89,24 +89,27 @@ export function SortPanel({
         </SortableContext>
       </DndContext>
 
-      <div className="mt-4 text-sm text-muted-foreground">Add fields</div>
-      <div className="mt-2 grid grid-cols-2 gap-2">
-        {available.length === 0 ? (
-          <div className="col-span-2 text-sm text-muted-foreground">All fields added.</div>
-        ) : (
-          available.map((f) => (
-            <Button
-              key={f}
-              variant="outline"
-              onClick={() => addField(f as SortField)} 
-              className="justify-start rounded-xl"
-            >
-              <ChevronsUp className="mr-2 h-4 w-4" />
-              {FIELD_LABEL[f as SortField]}
-            </Button>
-          ))
-        )}
-      </div>
+      {available.length > 0 ? (
+  <>
+    <div className="mt-4 text-sm text-muted-foreground">Add fields</div>
+    <div className="mt-2 grid grid-cols-2 gap-2">
+      {available.map((f) => (
+        <Button
+          key={f}
+          variant="outline"
+          onClick={() => addField(f as SortField)} 
+          className="justify-start rounded-xl"
+        >
+          <ListFilterPlus className="mr-2 h-4 w-4" />
+          {FIELD_LABEL[f as SortField]}
+        </Button>
+      ))}
+    </div>
+  </>
+) : (
+  <div className="mt-2 text-sm text-muted-foreground">All fields added.</div>
+)}
+
 
       <div className="mt-6 flex items-center justify-between">
         <Button variant="ghost" onClick={() => onChange([])}>
